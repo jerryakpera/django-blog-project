@@ -2,3 +2,6 @@
 .env
 blogger/db.sqlite3
 .vscode
+htmlcov/
+.coverage
+__pycache__
