@@ -1,0 +1,4 @@
+.venv/
+.env
+blogger/db.sqlite3
+.vscode
