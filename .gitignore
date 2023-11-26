@@ -4,4 +4,4 @@ blogger/db.sqlite3
 .vscode
 htmlcov/
 .coverage
-__pycache__
+__pycache__/
