@@ -25,3 +25,17 @@ class PostFactory(factory.django.DjangoModelFactory):
         return x
 
     status = "published"
+
+    @factory.post_generation
+    def tags(self, create, extracted, **kwargs):
+        if not create:
+            return
+
+        if extracted:
+            self.tags.add(extracted)
+        else:
+            _tags = "Nullam quis ante Etiam sit amet orci eget eros faucibus tincidunt Duis leo Sed fringilla mauris sit amet nibh".split(
+                " "
+            )
+            _tags = [tag.capitalize() for tag in _tags]
+            self.tags.add(*_tags)
