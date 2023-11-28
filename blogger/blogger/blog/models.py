@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 from django.contrib.auth.models import User
 from taggit.managers import TaggableManager
 
@@ -23,6 +24,14 @@ class Post(models.Model):
 
     status = models.CharField(choices=STATUS_CHOICES, default="draft", max_length=10)
     tags = TaggableManager()
+
+    def get_absolute_url(self):
+        return reverse(
+            "post_single",
+            args=[
+                self.slug,
+            ],
+        )
 
     def __str__(self) -> str:
         return self.title

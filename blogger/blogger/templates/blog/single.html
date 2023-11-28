@@ -1,0 +1,14 @@
+{% extends "base/3-col-template.html" %}
+
+{% block content-left %}
+  {% include "base/secondary-navbar.html" %}
+{% endblock  %}
+
+{% block content-mid %}
+  <h1>{{ post.title }}</h1>
+  <p>{{ post.content }}</p>
+{% endblock  %}
+
+{% block content-right %}
+  <h1>Right</h1>
+{% endblock  %}

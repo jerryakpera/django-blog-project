@@ -1,5 +1,8 @@
 {% for post in posts %}
-  <a href="#" class="text-decoration-none infscroll">
+  <a
+    href="{{ post.get_absolute_url }}"
+    class="text-decoration-none infscroll"
+  >
 
     {% if forloop.last %}
       <div
