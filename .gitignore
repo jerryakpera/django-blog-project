@@ -5,3 +5,4 @@ blogger/db.sqlite3
 htmlcov/
 .coverage
 __pycache__/
+test.py

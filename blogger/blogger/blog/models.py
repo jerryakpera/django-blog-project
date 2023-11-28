@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from taggit.managers import TaggableManager
 
 
 class Post(models.Model):
@@ -21,6 +22,7 @@ class Post(models.Model):
     ]
 
     status = models.CharField(choices=STATUS_CHOICES, default="draft", max_length=10)
+    tags = TaggableManager()
 
     def __str__(self) -> str:
         return self.title
